@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     //Objects
-    TextView regNoView, nameView, batchNoView;
+    TextView regNoView, nameView, batchNoView, infoView;
     EditText regNoTxt, nameTxt, batchNoTxt;
     Button btnRun;
 
@@ -24,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
         regNoView = findViewById(R.id.regNoView);
         nameView = findViewById(R.id.nameView);
         batchNoView = findViewById(R.id.batchNoView);
+        infoView = findViewById(R.id.infoView);
 
         regNoTxt = findViewById(R.id.regNoTxt);
         nameTxt = findViewById(R.id.nameTxt);
         batchNoTxt =findViewById(R.id.batchTxt);
 
         btnRun = findViewById(R.id.runBtn);
+
 
     }
 
@@ -40,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         btnRun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                regNoView.setText(regNoTxt.getText().toString());
-                nameView.setText(nameTxt.getText().toString());
-                batchNoView.setText(batchNoTxt.getText().toString());
+                String info =   regNoTxt.getText().toString() + "\n" +
+                                nameTxt.getText().toString() + "\n" +
+                                batchNoTxt.getText().toString() + "\n";
+                infoView.setText(info);
+
             }
         });
 
